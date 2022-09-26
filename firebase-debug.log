@@ -1,0 +1,14 @@
+[debug] [2022-09-26T19:21:16.816Z] ----------------------------------------------------------------------
+[debug] [2022-09-26T19:21:16.818Z] Command:       C:\Users\ShaomingXu\.nvm\versions\node\v16.11.1\bin\node.exe C:\Users\ShaomingXu\.nvm\versions\node\v16.11.1\bin\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-26T19:21:16.818Z] CLI Version:   11.10.0
+[debug] [2022-09-26T19:21:16.818Z] Platform:      win32
+[debug] [2022-09-26T19:21:16.818Z] Node Version:  v16.11.1
+[debug] [2022-09-26T19:21:16.824Z] Time:          Mon Sep 26 2022 14:21:16 GMT-0500 (Central Daylight Time)
+[debug] [2022-09-26T19:21:16.824Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-26T19:21:16.878Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-26T19:21:16.878Z] > authorizing via signed-in user (xsm90827@gmail.com)
+[debug] [2022-09-26T19:21:16.879Z] [iam] checking project react-e3d6c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-26T19:21:16.881Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/react-e3d6c:testIamPermissions [none]
+[debug] [2022-09-26T19:21:16.881Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/react-e3d6c:testIamPermissions x-goog-quota-user=projects/react-e3d6c
+[debug] [2022-09-26T19:21:16.881Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/react-e3d6c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
