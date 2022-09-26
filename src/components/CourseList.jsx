@@ -1,8 +1,9 @@
 import Course from './Course';
+import './CourseList.css'
 const CourseList = ({courses}) => (
-    <table>
+    <div className="course-list h-100">
         { Object.entries(courses).map(([id, course]) => <Course key={id} course={course} />) }
-    </table>
+    </div>
 );
 
 export default CourseList;
