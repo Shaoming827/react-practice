@@ -13,7 +13,7 @@ const Main = () => {
   if (error) return <h1>Error loading user data: {`${error}`}</h1>;
   if (isLoading) return <h1>Loading user data...</h1>;
   if (!data) return <h1>No user data found</h1>;
-  return (<div>
+  return (<div>test
     <Banner title = {data.title}></Banner>
     <CourseList courses = {data.courses}></CourseList>
     </div>);
