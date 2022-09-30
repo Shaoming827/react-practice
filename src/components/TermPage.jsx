@@ -26,10 +26,16 @@ const TermButton = ({term, selection, setSelection}) => (
 
 const TermPage = ({courses}) => {
     const [selection, setSelection] = useState(() => Object.keys(terms)[0]);
+    const [selected, setSelected] = useState([]);
+    const toggleSelected = (item) => setSelected(
+        selected.includes(item)
+        ? selected.filter(x => x !== item)
+        : [...selected, item]
+      );
     return (
         <div>
             <TermSelector selection ={selection} setSelection={setSelection}></TermSelector>
-            <CourseList courses = {courses} selection={selection}></CourseList>
+            <CourseList courses = {courses} selection={selection} selected={selected} toggleSelected={toggleSelected}></CourseList>
         </div>
     );
 
