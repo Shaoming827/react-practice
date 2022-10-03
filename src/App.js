@@ -4,9 +4,11 @@ import { useJsonQuery } from './utilities/fetch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
-import Banner from './components/Banner.jsx';
-import TermPage from './components/TermPage.jsx';
+import Banner from './components/Banner';
+import TermPage from './components/TermPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 //import CourseList from './components/CourseList.jsx';
 
 const Main = () => {

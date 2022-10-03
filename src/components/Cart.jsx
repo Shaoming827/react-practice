@@ -2,7 +2,6 @@
 
 const Cart = ({selected}) => (
   <div className="cart">
-      {selected.map(cur => console.log(cur))}
     {
       selected.length === 0
       ? <h2>There is no class selected. Just click the course you want, then come back.</h2>

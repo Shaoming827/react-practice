@@ -5,3 +5,7 @@
     background-color:#EFDCF9;
     color: green;
   }
+  .card.m-1.p-2.conflicted{
+    color: lightgrey;
+    pointer-events: none;
+  }
