@@ -11,14 +11,18 @@ export const parseClassMeets = (meet) => {
 export const compareTwoTimes = (time1, time2) => {
     let time1_array = time1.split(':');
     let time2_array = time2.split(':');
-    if(time1_array[0] > time2_array[0]){
+    let time1_hour = Number(time1_array[0]);
+    let time1_min = Number(time1_array[1]);
+    let time2_hour = Number(time2_array[0]);
+    let time2_min = Number(time2_array[1]);
+    if(time1_hour >time2_hour){
         return 1;
-    }else if(time1_array[0] < time2_array[0]){
+    }else if(time1_hour < time2_hour){
         return -1;
     }else{
-        if(time1_array[1] > time2_array[1]){
+        if(time1_min > time2_min){
             return 1;
-        }else if(time1_array[1] < time2_array[1]){
+        }else if(time1_min < time2_min){
             return -1;
         }else{
             return 0;
@@ -41,27 +45,30 @@ export const hasConflict = (cur_meet, list) => {
         if(cur_selected_course[2] === cur_meet_array[2]  
             || cur_selected_course[2].includes(cur_meet_array[2])
             || cur_meet_array[2].includes(cur_selected_course[2])){
+
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])<=0 
             && compareTwoTimes(cur_selected_course[1],cur_meet_array[1])>=0){
-                //console.log("nested");
+                console.log("nested");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])>=0
             &&compareTwoTimes(cur_selected_course[0],cur_meet_array[1])<=0){
-                //console.log("left bound");
+                console.log("left bound");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[1],cur_meet_array[0])>=0 
             &&compareTwoTimes(cur_selected_course[1],cur_meet_array[1])<=0){
-                //debug
-                // console.log("This is start:"+cur_selected_course[0] + ",This is start2:" + cur_meet_array[0] );
-                // console.log("This is end:"+cur_selected_course[1] + ",This is end2:" + cur_meet_array[1] );
-                //console.log("right bound");
+                
+                console.log("right bound");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])>=0
             &&compareTwoTimes(cur_selected_course[1],cur_meet_array[1])<=0){
-                //console.log("overlapped");
+                //debug
+                console.log("This is start:"+cur_selected_course[0] + ",This is start2:" + cur_meet_array[0] );
+                console.log("This is end:"+cur_selected_course[1] + ",This is end2:" + cur_meet_array[1] );
+                console.log("Compare: " + compareTwoTimes(cur_selected_course[0],cur_meet_array[0]));
+                console.log("overlapped");
                 return true;
             }
         }
