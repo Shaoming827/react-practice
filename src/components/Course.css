@@ -5,7 +5,13 @@
     background-color:#EFDCF9;
     color: green;
   }
-  .card.m-1.p-2.conflicted{
-    color: lightgrey;
-    pointer-events: none;
-  }
+.card.m-1.p-2.conflicted{
+  color: lightgrey;
+  pointer-events: none;
+}
+.card-title{
+  width: 100%;
+}
+.card-title a{
+  float:right;
+}
