@@ -48,27 +48,27 @@ export const hasConflict = (cur_meet, list) => {
 
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])<=0 
             && compareTwoTimes(cur_selected_course[1],cur_meet_array[1])>=0){
-                console.log("nested");
+                //console.log("nested");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])>=0
             &&compareTwoTimes(cur_selected_course[0],cur_meet_array[1])<=0){
-                console.log("left bound");
+                //console.log("left bound");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[1],cur_meet_array[0])>=0 
             &&compareTwoTimes(cur_selected_course[1],cur_meet_array[1])<=0){
                 
-                console.log("right bound");
+                //console.log("right bound");
                 return true;
             }
             if(compareTwoTimes(cur_selected_course[0],cur_meet_array[0])>=0
             &&compareTwoTimes(cur_selected_course[1],cur_meet_array[1])<=0){
                 //debug
-                console.log("This is start:"+cur_selected_course[0] + ",This is start2:" + cur_meet_array[0] );
-                console.log("This is end:"+cur_selected_course[1] + ",This is end2:" + cur_meet_array[1] );
-                console.log("Compare: " + compareTwoTimes(cur_selected_course[0],cur_meet_array[0]));
-                console.log("overlapped");
+                    // console.log("This is start:"+cur_selected_course[0] + ",This is start2:" + cur_meet_array[0] );
+                    // console.log("This is end:"+cur_selected_course[1] + ",This is end2:" + cur_meet_array[1] );
+                    // console.log("Compare: " + compareTwoTimes(cur_selected_course[0],cur_meet_array[0]));
+                    // console.log("overlapped");
                 return true;
             }
         }

@@ -6,7 +6,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 import Banner from './components/Banner';
 import TermPage from './components/TermPage';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import CourseEditor from './components/CourseEditor';
 //import CourseList from './components/CourseList.jsx';
@@ -30,7 +29,7 @@ const Main = () => {
                 <TermPage courses = {data.courses}/> 
             </div> 
         } />
-      <Route path="/course/:course_term/:course_number" element={<CourseFormForUrl data={data} />} />
+      <Route path="/course/:course_term/:course_number" element={<CourseFormForUrl data={data.courses} />} />
     </Routes>
   </BrowserRouter>
   );
