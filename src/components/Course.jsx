@@ -2,7 +2,7 @@ import './Course.css';
 import {hasConflict } from '../utilities/timeConflicts';
 import { Link } from 'react-router-dom';
 
-const Course = ({course, selection, selected, toggleSelected}) => {
+const Course = ({course, selection, selected, toggleSelected, profile}) => {
     if(selection === course.term){
         let course_term = course.term === "Fall"?"F":(course.term === "Winter"?"W":"S");
         return (
@@ -10,10 +10,11 @@ const Course = ({course, selection, selected, toggleSelected}) => {
                 <div className="card-body h-100" >
                     <h5 className="card-title">
                         <b>{course.term} CS {course.number}</b>
-                        <Link to={`/course/${course_term}${course.number}`
-                                  }>
-                                  <i className="bi bi-pencil"></i>
-                        </Link>
+                        { 
+                        profile?.isAdmin && 
+                        <Link to={`/course/${course_term}${course.number}`}>
+                            <i className="bi bi-pencil"></i>
+                        </Link> }
                     </h5>
                    
                     <p className="card-text">{course.title}</p>

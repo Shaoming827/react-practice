@@ -36,7 +36,7 @@ const ButtonBar = ({message, disabled}) => {
     </div>
   );
 };
-const CourseEditor = ({course_key,data}) => {
+const CourseEditor = ({course_key,data, profile}) => {
   const [update, result] = useDbUpdate(`/courses/${course_key}`);
   //  console.log(JSON.stringify(data));
   const [state, change] = useFormData(validateUserData, data,course_key);

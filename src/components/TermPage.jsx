@@ -31,7 +31,7 @@ const TermButton = ({term, selection, setSelection}) => (
     </div>
 );
 
-const TermPage = ({courses}) => {
+const TermPage = ({courses, profile}) => {
     const [selection, setSelection] = useState(() => Object.keys(terms)[0]);
     const [selected, setSelected] = useState([]);
     const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ const TermPage = ({courses}) => {
             <CoursePlan open={open} close={closeModal}>
                     <Cart selected={selected} />
             </CoursePlan>
-            <CourseList courses = {courses} selection={selection} selected={selected} toggleSelected={toggleSelected}></CourseList>
+            <CourseList courses = {courses} selection={selection} selected={selected} toggleSelected={toggleSelected} profile={profile}></CourseList>
            
         </div>
     );
