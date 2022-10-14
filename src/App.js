@@ -8,6 +8,7 @@ import TermPage from './components/TermPage';
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import CourseEditor from './components/CourseEditor';
 import { useDbData } from "./utilities/firebase";
+import Navigation from "./components/Navigation";
 //import CourseList from './components/CourseList.jsx';
 
 const CourseFormForUrl = (data) =>{
@@ -26,6 +27,7 @@ const Main = () => {
   
   return (
     <BrowserRouter>
+    <Navigation/>
     <Routes>
       <Route path="/" element={
             <div>
@@ -45,6 +47,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <div className ="container">
+      
       <Main />
     </div>
   </QueryClientProvider>

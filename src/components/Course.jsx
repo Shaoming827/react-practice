@@ -12,7 +12,7 @@ const Course = ({course, selection, selected, toggleSelected}) => {
                         <b>{course.term} CS {course.number}</b>
                         <Link to={`/course/${course_term}${course.number}`
                                   }>
-                                  <i class="bi bi-pencil"></i>
+                                  <i className="bi bi-pencil"></i>
                         </Link>
                     </h5>
                    
