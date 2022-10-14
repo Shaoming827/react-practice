@@ -11,15 +11,19 @@ import { useDbData } from "./utilities/firebase";
 //import CourseList from './components/CourseList.jsx';
 
 const CourseFormForUrl = (data) =>{
-  const { course_term,course_number } = useParams();
-  return <CourseEditor course_term={course_term} course_number={course_number} data={data} />;
+  const { course_key } = useParams();
+  
+  
+  return <CourseEditor course_key={course_key}  data={data["data"]} />;
 };
+
 const Main = () => {
   // const [data, isLoading, error] = useJsonQuery('https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php');
   const [data, error] = useDbData('/');
   if (error) return <h1>Error loading data: {error.toString()}</h1>;
   if (data === undefined) return <h1>Loading data...</h1>;
   if (!data) return <h1>No data found</h1>;
+  
   return (
     <BrowserRouter>
     <Routes>
@@ -29,16 +33,10 @@ const Main = () => {
                 <TermPage courses = {data.courses}/> 
             </div> 
         } />
-      <Route path="/course/:course_term/:course_number" element={<CourseFormForUrl data={data.courses} />} />
+      <Route path="/course/:course_key/" element={<CourseFormForUrl data={data.courses} />} />
     </Routes>
   </BrowserRouter>
   );
-  // return (
-  //   <div>
-  //     <Banner title = {data.title}></Banner>
-  //     <TermPage courses = {data.courses}/> 
-  //   </div>
-  //   );
 }
 
 const queryClient = new QueryClient();
