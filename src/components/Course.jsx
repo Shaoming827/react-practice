@@ -6,7 +6,7 @@ const Course = ({course, selection, selected, toggleSelected, profile}) => {
     if(selection === course.term){
         let course_term = course.term === "Fall"?"F":(course.term === "Winter"?"W":"S");
         return (
-            <div className = {`card m-1 p-2 ${selected.includes(course) ? 'selected' : ''} ${hasConflict(course, selected) ? 'conflicted' : ''} `} onClick={() => toggleSelected(course)}>
+            <div className = {`card m-1 p-2 ${selected.includes(course) ? 'selected' : ''} ${hasConflict(course, selected) ? 'conflicted' : ''} `} onClick={() => toggleSelected(course)} data-cy="course">
                 <div className="card-body h-100" >
                     <h5 className="card-title">
                         <b>{course.term} CS {course.number}</b>
